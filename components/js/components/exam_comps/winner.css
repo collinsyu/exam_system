@@ -1,0 +1,178 @@
+.achievement {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.achievement-content .ant-avatar{
+
+  line-height: 68px;
+  height: 68px;
+  width: 68px;
+  border-radius: 50%;
+  font-size: 45px;
+}
+.achievement-content .ant-avatar>* {
+  line-height: 68px;
+}
+.achievement-inner {
+  text-align: center;
+  color: #42686a;
+}
+
+.achievement-header {
+  position: relative;
+  z-index: 1;
+}
+
+.achievement-title {
+  font-size: 4.5vmin;
+  margin-bottom: .5rem;
+}
+
+.badge {
+  --border-w: 5px;
+  position: relative;
+  z-index: 0;
+  display: block;
+  /*font-size: 20vmin;*/
+  width: 94px;
+  height: 94px;
+  /*margin: .25em auto;*/
+  margin: 0 auto -25px;
+  border-radius: 50%;
+  border: var(--border-w) solid transparent;
+  background-repeat: no-repeat;
+  background-origin: border-box;
+}
+
+.achievement .badge.main {
+  background-image: -webkit-linear-gradient(top left, var(--grad-tl), var(--grad-br));
+  background-image: linear-gradient(to bottom right, var(--grad-tl), var(--grad-br));
+  box-shadow: 0 0 1em var(--shadow), 0 0 0 var(--ring1-w, 0.02em) var(--ring1), inset 0 0 0.02em var(--ring2-w, 0.01em) var(--ring2), inset 0 0 0 var(--ring-white-w, 0.03em) #fff, inset 0 0 0 var(--ring3-w, 0.05em) var(--ring3), inset 0 0 0 1em #fff;
+}
+
+.badge::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  margin: calc(- var(--border-w));
+  border-radius: inherit;
+  background-image: -webkit-linear-gradient(top left, rgba(255, 255, 255, 0.5), transparent 80%);
+  background-image: linear-gradient(to bottom right, rgba(255, 255, 255, 0.5), transparent 80%);
+  pointer-events: none;
+}
+
+.badge .badge-img {
+  position: relative;
+  display: inline-block;
+  z-index: 1;
+  width: 82px;
+  height: 82px;
+  border-radius: inherit;
+  -o-object-fit: contain;
+  object-fit: contain;
+  padding:7px;
+  // pointer-events: none;
+}
+
+
+.achievement .badge.main.bronze{
+  --grad-tl: #fbf1e3;
+  --grad-br: #f6c8b0;
+  --shadow: #fad3ae;
+  --ring1: #facbb7;
+  --ring2: #f6ab7e;
+  --ring3: #dc8f66;
+}
+
+.achievement .badge.main.silver{
+  --grad-tl: #ebf6fa;
+  --grad-br: #bfdae4;
+  --shadow: #a2ecff;
+  --ring1: #a2c1cc;
+  --ring2: #c5d8e2;
+  --ring3: #6ea0b7;
+}
+
+.achievement .badge.main.golden {
+  --grad-tl: #fff68e;
+  --grad-br: #fbdc57;
+  --shadow: #fff87e;
+  --ring1: #fcbd31;
+  --ring2: #eeb959;
+  --ring3: #dc8e2d;
+}
+
+.badge.small {
+  font-size: 5.5vmin;
+  --border-w: .175em;
+  --ring1-w: .01em;
+  --ring2-w: 0em;
+  --ring-white-w: 0em;
+  --ring3-w: .02em;
+  --shadow: transparent;
+}
+
+.rewards {
+  padding-top: .5rem;
+}
+
+.ribbon {
+  position: relative;
+  z-index: 1;
+  width: 80%;
+  margin: 0 auto 0rem;
+  padding-bottom: 0.7em;
+  font-size: smaller;
+  line-height: 2.4em;
+  text-transform: uppercase;
+  letter-spacing: .25em;
+  color: #fff;
+  background-repeat: no-repeat;
+  background-image: -webkit-linear-gradient(left, var(--ribbon-color1), var(--ribbon-color1)), -webkit-linear-gradient(135deg, transparent 50%, var(--ribbon-color2) 0), -webkit-linear-gradient(225deg, transparent 50%, var(--ribbon-color2) 0), -webkit-linear-gradient(right, var(--ribbon-color2), var(--ribbon-color2)), -webkit-linear-gradient(45deg, transparent 50%, var(--ribbon-color2) 0), -webkit-linear-gradient(315deg, transparent 50%, var(--ribbon-color2) 0), -webkit-linear-gradient(left, var(--ribbon-color2), var(--ribbon-color2));
+  background-image: linear-gradient(90deg, var(--ribbon-color1), var(--ribbon-color1)), linear-gradient(-45deg, transparent 50%, var(--ribbon-color2) 0), linear-gradient(-135deg, transparent 50%, var(--ribbon-color2) 0), linear-gradient(-90deg, var(--ribbon-color2), var(--ribbon-color2)), linear-gradient(45deg, transparent 50%, var(--ribbon-color2) 0), linear-gradient(135deg, transparent 50%, var(--ribbon-color2) 0), linear-gradient(90deg, var(--ribbon-color2), var(--ribbon-color2));
+  background-size: calc(100% - 4em) 2.4em, 2.4em 2.4em, 2.4em 2.4em, 0.8em 2.4em, 2.4em 2.4em, 2.4em 2.4em, 0.8em 2.4em;
+  background-position: 50% 1px, 100% 100%, 100% 100%, right 1.2em top 100%, 0 100%, 0 100%, 1.2em 100%;
+}
+
+.ribbon::before,
+.ribbon::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  border-top: 0.7em solid var(--ribbon-color3);
+  color: var(--ribbon-color2);
+}
+
+.ribbon::before {
+  left: 2em;
+  border-left: 2em solid;
+}
+
+.ribbon::after {
+  right: 2em;
+  border-right: 2em solid;
+}
+
+.achievement .ribbon.bronze {
+  --ribbon-color1: #f9a26d;
+  --ribbon-color2: #e99866;
+  --ribbon-color3: #c68157;
+}
+
+.achievement .ribbon.silver {
+  --ribbon-color1: #b2c6d6;
+  --ribbon-color2: #bed4e5;
+  --ribbon-color3: #97a9b6;
+}
+
+.achievement .ribbon.golden {
+  --ribbon-color1: #eec459;
+  --ribbon-color2: #fed160;
+  --ribbon-color3: #cca54c;
+}

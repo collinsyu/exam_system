@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html class=''>
+
+<head>
+	<meta charset='UTF-8'>
+	<link href="https://cdn.bootcss.com/antd/2.12.7/antd.min.css" rel="stylesheet">
+	<!-- <script src="http://localhost:8080/bundle.js"></script> -->
+	<link href=" http://localhost:8080/styles.css" rel="stylesheet">
+	<link type="image/x-icon" href="../../favicon.ico" rel="icon">
+	<!-- <link href="https://gw.alipayobjects.com/os/rmsportal/rxpxgOuCJeAGLXMeuLaQ.css" rel="stylesheet"> -->
+	<title><%= title %></title>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+</head>
+	<body class="l-fixed">
+
+		<% if (sider) { %>
+			<% include ./sider.html %>
+		<% } %>
+
+		<div style="display:none" id="userinfo"><%= JSON.stringify(userinfo) %></div>
+	</body>
+	<script src="https://cdn.bootcss.com/react/15.5.4/react.min.js"></script>
+	<script src="https://cdn.bootcss.com/react/15.5.4/react-dom.min.js"></script>
+	<script src="https://cdn.bootcss.com/react-router/3.0.0/ReactRouter.min.js"></script>
+	<script src="https://cdn.bootcss.com/antd/2.12.7/antd.min.js"></script>
+
+</html>

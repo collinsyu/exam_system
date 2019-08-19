@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html class=''>
+
+<head>
+  <meta charset='UTF-8'>
+  <title><%= title %></title>
+
+
+  <style class="cp-pen-styles">
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-weight: 300;
+    }
+    html,
+    body {
+      background: #fff;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      cursor: default;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+      font-family: 'PT Sans', sans-serif;
+    }
+    body {
+      font-family: 'Source Sans Pro', sans-serif;
+      color: white;
+      font-weight: 300;
+    }
+
+    body ::-webkit-input-placeholder {
+      /* WebKit browsers */
+      font-family: 'Source Sans Pro', sans-serif;
+      color: white;
+      font-weight: 300;
+    }
+
+    body :-moz-placeholder {
+      /* Mozilla Firefox 4 to 18 */
+      font-family: 'Source Sans Pro', sans-serif;
+      color: white;
+      opacity: 1;
+      font-weight: 300;
+    }
+
+    body ::-moz-placeholder {
+      /* Mozilla Firefox 19+ */
+      font-family: 'Source Sans Pro', sans-serif;
+      color: white;
+      opacity: 1;
+      font-weight: 300;
+    }
+
+    body :-ms-input-placeholder {
+      /* Internet Explorer 10+ */
+      font-family: 'Source Sans Pro', sans-serif;
+      color: white;
+      font-weight: 300;
+    }
+
+    .wrapper {
+      background: #50a3a2;
+      background: -webkit-linear-gradient(top left, #50a3a2 0%, #53e3a6 100%);
+      background: linear-gradient(to bottom right, #50a3a2 0%, #53e3a6 100%);
+      position: absolute;
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 400px;
+      margin-top: -200px;
+      overflow: hidden;
+    }
+
+    .wrapper.form-success .container h1 {
+      -webkit-transform: translateY(85px);
+      transform: translateY(85px);
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 80px 0;
+      height: 400px;
+      text-align: center;
+    }
+
+    .container h1 {
+      font-size: 40px;
+      -webkit-transition-duration: 1s;
+      transition-duration: 1s;
+      -webkit-transition-timing-function: ease-in-put;
+      transition-timing-function: ease-in-put;
+      font-weight: 200;
+    }
+
+    form {
+      padding: 20px 0;
+      position: relative;
+      z-index: 2;
+    }
+
+    form input {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: 0;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      background-color: rgba(255, 255, 255, 0.2);
+      width: 250px;
+      border-radius: 3px;
+      padding: 10px 15px;
+      margin: 0 auto 10px auto;
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      color: white;
+      -webkit-transition-duration: 0.25s;
+      transition-duration: 0.25s;
+      font-weight: 300;
+    }
+
+    form input:hover {
+      background-color: rgba(255, 255, 255, 0.4);
+    }
+
+    form input:focus {
+      background-color: white;
+      width: 300px;
+      color: #53e3a6;
+    }
+
+    form button {
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      outline: 0;
+      background-color: white;
+      border: 0;
+      padding: 10px 15px;
+      color: #53e3a6;
+      border-radius: 3px;
+      width: 250px;
+      cursor: pointer;
+      font-size: 18px;
+      -webkit-transition-duration: 0.25s;
+      transition-duration: 0.25s;
+    }
+
+    form button:hover {
+      background-color: #f5f7f9;
+    }
+
+    .bg-bubbles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .bg-bubbles li {
+      position: absolute;
+      list-style: none;
+      display: block;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.15);
+      bottom: -160px;
+      -webkit-animation: square 25s infinite;
+      animation: square 25s infinite;
+      -webkit-transition-timing-function: linear;
+      transition-timing-function: linear;
+    }
+
+    .bg-bubbles li:nth-child(1) {
+      left: 10%;
+    }
+
+    .bg-bubbles li:nth-child(2) {
+      left: 20%;
+      width: 80px;
+      height: 80px;
+      -webkit-animation-delay: 2s;
+      animation-delay: 2s;
+      -webkit-animation-duration: 17s;
+      animation-duration: 17s;
+    }
+
+    .bg-bubbles li:nth-child(3) {
+      left: 25%;
+      -webkit-animation-delay: 4s;
+      animation-delay: 4s;
+    }
+
+    .bg-bubbles li:nth-child(4) {
+      left: 40%;
+      width: 60px;
+      height: 60px;
+      -webkit-animation-duration: 22s;
+      animation-duration: 22s;
+      background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .bg-bubbles li:nth-child(5) {
+      left: 70%;
+    }
+
+    .bg-bubbles li:nth-child(6) {
+      left: 80%;
+      width: 120px;
+      height: 120px;
+      -webkit-animation-delay: 3s;
+      animation-delay: 3s;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .bg-bubbles li:nth-child(7) {
+      left: 32%;
+      width: 160px;
+      height: 160px;
+      -webkit-animation-delay: 7s;
+      animation-delay: 7s;
+    }
+
+    .bg-bubbles li:nth-child(8) {
+      left: 55%;
+      width: 20px;
+      height: 20px;
+      -webkit-animation-delay: 15s;
+      animation-delay: 15s;
+      -webkit-animation-duration: 40s;
+      animation-duration: 40s;
+    }
+
+    .bg-bubbles li:nth-child(9) {
+      left: 25%;
+      width: 10px;
+      height: 10px;
+      -webkit-animation-delay: 2s;
+      animation-delay: 2s;
+      -webkit-animation-duration: 40s;
+      animation-duration: 40s;
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    .bg-bubbles li:nth-child(10) {
+      left: 90%;
+      width: 160px;
+      height: 160px;
+      -webkit-animation-delay: 11s;
+      animation-delay: 11s;
+    }
+
+    @-webkit-keyframes square {
+      0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      100% {
+        -webkit-transform: translateY(-700px) rotate(600deg);
+        transform: translateY(-700px) rotate(600deg);
+      }
+    }
+
+    @keyframes square {
+      0% {
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+      100% {
+        -webkit-transform: translateY(-700px) rotate(600deg);
+        transform: translateY(-700px) rotate(600deg);
+      }
+    }
+
+
+    /* 小球球部分 */
+
+    .title {
+      font-size: 10vw;
+      font-weight: 700;
+      text-align: center;
+      margin-top: 15%;
+      color: #444;
+    }
+
+    .subtitle {
+      font-size: 4vw;
+      color: #777;
+      font-weight: normal;
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .credit {
+      position: absolute;
+      bottom: 5px;
+      width: 100%;
+      display: block;
+      text-align: center;
+      color: #777;
+    }
+
+    .credit>a {
+      color: #777;
+    }
+
+    .particle-count {
+      display: block;
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    .particles>.particle {
+      border-radius: 100%;
+      background: transparent;
+      position: absolute;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+    }
+
+    .particles>.particle.smaller {
+      width: 5px;
+      height: 5px;
+    }
+
+    .particles>.particle.small {
+      width: 10px;
+      height: 10px;
+    }
+
+    .particles>.particle.normal {
+      width: 15px;
+      height: 15px;
+    }
+
+    .particles>.particle.big {
+      width: 20px;
+      height: 20px;
+    }
+
+    .particles>.particle.bigger {
+      width: 25px;
+      height: 25px;
+    }
+  </style>
+  <link type="image/x-icon" href="../../favicon.ico" rel="icon">
+
+</head>
+
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <h1>仁聚汇通员工考试系统</h1>
+
+      <form class="form">
+        <input type="email" name="email" placeholder="邮箱">
+        <input type="password" name="password" placeholder="密码">
+        <button type="button" id="login-button">登录</button>
+        <!-- <p>还没有注册？<a href="/signup" style="color: #FFEB3B;">注册</a></p> -->
+        <p style="    width: 300px;
+    margin: 0 auto;
+    padding: 10px 15px;"><a href="/password_find" style="color: #FFEB3B;">忘记密码？<a></p>
+      </form>
+
+    </div>
+    <ul class="bg-bubbles">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+
+  </div>
+  <div class="particles"></div>
+  <script src="https://cdn.bootcss.com/jquery/2.1.3/jquery.min.js"></script>
+  <script src="../../js/login.js"></script>
+  <script src="../../js/components/alert.js"></script>
+  <script>
+    var d = document,
+      $d = $(d),
+      w = window,
+      $w = $(w),
+      wWidth = $w.width(),
+      wHeight = $w.height(),
+      credit = $('.credit > a'),
+      particles = $('.particles'),
+      particleCount = 0,
+      sizes = [
+        15, 20, 25, 35, 45
+      ],
+      colors = [
+        '#f44336', '#e91e63', '#9c27b0', '#673ab7', '#3f51b5',
+        '#2196f3', '#03a9f4', '#00bcd4', '#009688', '#4CAF50',
+        '#8BC34A', '#CDDC39', '#FFEB3B', '#FFC107', '#FF9800',
+        '#FF5722', '#795548', '#9E9E9E', '#607D8B', '#777777'
+      ],
+
+      mouseX = $w.width() / 2,
+      mouseY = $w.height() / 2;
+
+    function updateParticleCount() {
+      $('.particle-count > .number').text(particleCount);
+    };
+
+    $w
+      .on('resize', function() {
+        wWidth = $w.width();
+        wHeight = $w.height();
+      });
+
+    $d
+      .on('mousemove touchmove', function(event) {
+        event.preventDefault();
+        event.stopPropagation();
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        if (!!event.originalEvent.touches) {
+          mouseX = event.originalEvent.touches[0].clientX;
+          mouseY = event.originalEvent.touches[0].clientY;
+        }
+      })
+      .on('mousedown touchstart', function(event) {
+        if (event.target === credit.get(0)) {
+          return;
+        }
+        mouseX = event.clientX;
+        mouseY = event.clientY;
+        if (!!event.originalEvent.touches) {
+          mouseX = event.originalEvent.touches[0].clientX;
+          mouseY = event.originalEvent.touches[0].clientY;
+        }
+        var timer = setInterval(function() {
+          $d
+            .one('mouseup mouseleave touchend touchcancel touchleave', function() {
+              clearInterval(timer);
+            })
+          createParticle(event);
+        }, 1000 / 60)
+
+      });
+
+
+    function createParticle(event) {
+      var particle = $('<div class="particle"/>'),
+        size = sizes[Math.floor(Math.random() * sizes.length)],
+        color = colors[Math.floor(Math.random() * colors.length)],
+        negative = size / 2,
+        speedHorz = Math.random() * 10,
+        speedUp = Math.random() * 25,
+        spinVal = 360 * Math.random(),
+        spinSpeed = ((36 * Math.random())) * (Math.random() <= .5 ? -1 : 1),
+        otime,
+        time = otime = (1 + (.5 * Math.random())) * 1000,
+        top = (mouseY - negative),
+        left = (mouseX - negative),
+        direction = Math.random() <= .5 ? -1 : 1,
+        life = 10;
+
+      particle
+        .css({
+          height: size + 'px',
+          width: size + 'px',
+          top: top + 'px',
+          left: left + 'px',
+          background: color,
+          transform: 'rotate(' + spinVal + 'deg)',
+          webkitTransform: 'rotate(' + spinVal + 'deg)'
+        })
+        .appendTo(particles);
+      particleCount++;
+      updateParticleCount();
+
+      var particleTimer = setInterval(function() {
+        time = time - life;
+        left = left - (speedHorz * direction);
+        top = top - speedUp;
+        speedUp = Math.min(size, speedUp - 1);
+        spinVal = spinVal + spinSpeed;
+
+
+        particle
+          .css({
+            height: size + 'px',
+            width: size + 'px',
+            top: top + 'px',
+            left: left + 'px',
+            opacity: ((time / otime) / 2) + .25,
+            transform: 'rotate(' + spinVal + 'deg)',
+            webkitTransform: 'rotate(' + spinVal + 'deg)'
+          });
+
+        if (time <= 0 || left <= -size || left >= wWidth + size || top >= wHeight + size) {
+          particle.remove();
+          particleCount--;
+          updateParticleCount();
+          clearInterval(particleTimer);
+        }
+      }, 1000 / 50);
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,191 @@
+<header class="l-header header js-header">
+	<div class="l-header-container js-l-header-container">
+		<nav class="header-nav header-nav-top">
+			<ol>
+				<li class="header-network js-header-network">
+					<a class="header-nav-item" href="/">
+						<span class="header-nav-icon condensed-logo condensed-logo-medium">
+						</span>
+						<span class="header-nav-body js-header-network-name">
+							内部考试系统
+						</span>
+					</a>
+				</li>
+				<!-- <li class="notifications-button js-notifications-button">
+					<a class="header-nav-item" href="javascript:;">
+						<i class="icon-globe header-nav-icon">
+						</i>
+						<span class="header-nav-body">
+							通知
+						</span>
+						<span class="header-nav-body" id="notification_sider">
+						</span>
+					</a>
+				</li> -->
+        <!--  这里是用户信息 -->
+				<li class="header-avatar js-header-avatar">
+					<a class="header-nav-item" href="/settings">
+						<span class="avatar avatar-small header-nav-icon">
+							<!-- <img class="fab-icon" src=""/> -->
+              <% if (userinfo.avatar) { %>
+                <img class="avatar-current-user avatar-image" src="<%= userinfo.avatar %>"/>
+              <% } else { %>
+                <div class="avatar-text" style="background: <%= userinfo.avatar_color %>;color:#fff"><%= userinfo.name.substr(0, 1).toLocaleUpperCase() %></div>
+              <% } %>
+						</span>
+						<span class="header-nav-body">
+							<%= userinfo.name %>
+						</span>
+					</a>
+					<a class="header-nav-option" href="/settings">
+						<i class="icon-cog js-icon-cog" original-title="settings">
+						</i>
+					</a>
+				</li>
+			</ol>
+		</nav>
+		<nav class="header-nav header-nav-course-joins">
+			<h4>
+				导航
+			</h4>
+			<ol class="js-course-joins">
+				<!-- <li class="course-join js-course-join active" data-last_viewed="1.401042898e+12"
+				data-user_id="59" data-created="1.401042898e+12" data-term_id="93" data-course_id="3272"
+				data-id="126775">
+				<div class="course-join-course js-course-join-course" data-name="Elementary Psychology" data-created="1.354528103e+12" data-network_id="1" data-founder_id="59" data-type="null" data-id="3272"></div>
+				<a class="header-nav-item" href="http://localdocker:54615/classes/3272">
+				<i class="icon-group-alt header-nav-icon"></i>
+				<span class="header-nav-body">
+				Elementary Psychology
+				</span>
+				<i class="icon-remove js-icon-remove header-nav-option" original-title="drop"></i>
+				</a>
+				</li> -->
+				<li class="course-join js-course-join">
+					<a class="header-nav-item" href="/">
+						<i class="icon-group-alt header-nav-icon"></i>
+						<span class="header-nav-body">
+							我 的 试 卷
+						</span>
+						<!-- <i class="icon-remove js-icon-remove header-nav-option" original-title="drop"></i> -->
+					</a>
+				</li>
+				<% if (userinfo.role==100) { %>
+					<li>
+						<a class="header-nav-item" href="/exam">
+							<i class="icon-plus header-nav-icon">
+								<!-- <i class="icon-exclamation-sign">
+								</i> -->
+							</i>
+							<span class="header-nav-body">
+								考 试 管 理
+							</span>
+						</a>
+					</li>
+					<li>
+						<a class="header-nav-item" href="/paper">
+							<i class="icon-plus header-nav-icon">
+								<!-- <i class="icon-exclamation-sign">
+								</i> -->
+							</i>
+							<span class="header-nav-body">
+								考 卷 管 理
+							</span>
+						</a>
+					</li>
+	        <li>
+						<a class="header-nav-item" href="/question">
+							<i class="icon-plus header-nav-icon">
+								<!-- <i class="icon-exclamation-sign">
+								</i> -->
+							</i>
+							<span class="header-nav-body">
+								题 库 管 理
+							</span>
+						</a>
+					</li>
+	        <li>
+						<a class="header-nav-item" href="/user">
+							<i class="icon-plus header-nav-icon">
+								<!-- <i class="icon-exclamation-sign">
+								</i> -->
+							</i>
+							<span class="header-nav-body">
+								用 户 管 理
+							</span>
+						</a>
+					</li>
+				<% } %>
+
+			</ol>
+		</nav>
+		<!-- <nav class="header-nav header-nav-condensed-convos">
+			<h4>
+				messages
+			</h4>
+			<ol class="js-condensed-convos">
+				<li class="condensed-convo js-condensed-convo" data-recipients="[&lt;Recipient('1883')&gt;, &lt;Recipient('1884')&gt;]"
+				data-id="943" data-modified="1.402439784e+12" data-created="1.388980565e+12">
+					<a class="header-nav-item" href="#">
+						<span class="avatar avatar-small header-nav-icon">
+							<img class="fab-icon" src="http://localdocker:54615/common/img/fabicons/celeb_crown.png"
+							/>
+							<img class="avatar-image" src="https://s3.amazonaws.com/clusterflunk_dev/static/img/cached_avatars/79/small"
+							/>
+						</span>
+						<span class="condensed-convo-name js-condensed-convo-name header-nav-body">
+							Dylan
+						</span>
+						<span class="chat js-chat header-nav-option">
+							<i class="icon-circle">
+							</i>
+						</span>
+						<div class="clearfix">
+						</div>
+					</a>
+				</li>
+			</ol>
+		</nav> -->
+		<nav class="header-nav header-nav-bottom">
+			<ol>
+				<!-- 这里留着等待完善，先写完主干内容 -->
+				<!-- <li>
+				<a class="header-nav-item" href="http://localdocker:54615/posts/4420">
+				<i class="icon-question-sign header-nav-icon"></i>
+				<span class="header-nav-body">
+				help
+				</span>
+				</a>
+				</li> -->
+				<li>
+					<a class="header-nav-item" href="/logout">
+						<i class="icon-exit header-nav-icon">
+						</i>
+						<span class="header-nav-body">
+							登 出
+						</span>
+					</a>
+				</li>
+			</ol>
+		</nav>
+	</div>
+	<div class="clearfix">
+	</div>
+</header>
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    var path = window.location.pathname;
+    console.log(path);
+    $(".js-course-joins").find("li").each(function(){
+      var url = $(this).children("a").attr("href");
+      if(url){
+        // url = url.substr(1);
+        if(path == url){
+          $(this).addClass("active");
+        }
+      }
+    })
+  });
+</script>
